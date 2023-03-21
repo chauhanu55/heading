@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="heading.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="contain">
+            <div class="head">
+                <h3>Accordion Heading 1</h3>
+                <i class="fa-solid fa-circle-plus"></i>
+
+            </div>
+            <div class="text active">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nobis ipsam iure illum accusantium quod praesentium aspernatur. Voluptates repudiandae fugit, odit corporis temporibus possimus dolore commodi tenetur expedita quos laudantium.
+                </p>
+            </div>
+        </div>
+        <div class="contain">
+            <div class="head">
+                <h3>Accordion Heading 2</h3>
+                <i class="fa-solid fa-circle-plus"></i>
+
+            </div>
+            <div class="text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nobis ipsam iure illum accusantium quod praesentium aspernatur. Voluptates repudiandae fugit, odit corporis temporibus possimus dolore commodi tenetur expedita quos laudantium.
+                </p>
+            </div>
+        </div>
+        <div class="contain">
+            <div class="head">
+                <h3>Accordion Heading 3</h3>
+                <i class="fa-solid fa-circle-plus"></i>
+
+            </div>
+            <div class="text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nobis ipsam iure illum accusantium quod praesentium aspernatur. Voluptates repudiandae fugit, odit corporis temporibus possimus dolore commodi tenetur expedita quos laudantium.
+                </p>
+            </div>
+        </div>
+        <div class="contain">
+            <div class="head">
+                <h3>Accordion Heading 4</h3>
+                <i class="fa-solid fa-circle-plus"></i>
+            </div>
+            <div class="text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nobis ipsam iure illum accusantium quod praesentium aspernatur. Voluptates repudiandae fugit, odit corporis temporibus possimus dolore commodi tenetur expedita quos laudantium.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        let contain = document.querySelectorAll("i");
+        for(let i = 0; i < contain.length; i++){
+            contain[i].onclick = () => {
+                if(contain[i].parentElement.nextElementSibling.classList.contains("active")){
+                    contain[i].parentElement.nextElementSibling.classList.remove("active")
+                    contain[i].classList.remove("fa-circle-minus")
+                    contain[i].classList.add("fa-circle-plus")
+                }
+                else{
+                 contain[i].parentElement.nextElementSibling.classList.add("active")
+                 contain[i].classList.remove("fa-circle-plus")
+                 contain[i].classList.add("fa-circle-minus")  
+                }
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+        const icons = document.querySelectorAll(".head i");
+        const elements = document.querySelectorAll('.text');
+        var btn = document.querySelectorAll(".fa-solid");
+        // console.log('')
+        for (let i = 0; i < icons.length; i++) {
+            // console.log('')
+            icons[i].onclick = () => {
+                elements.forEach((element) => {
+                    element.classList.remove('active');
+                    
+                });
+                btn.forEach((btn) => {
+                    btn.classList.remove("fa-circle-minus");
+                    btn.classList.add("fa-circle-plus"); 
+                    
+                });
+                
+                if (icons[i].parentElement.nextElementSibling.classList.contains("active")) {
+                    icons[i].parentElement.nextElementSibling.classList.remove("active")
+                    icons[i].classList.remove("fa-circle-minus")
+                    icons[i].classList.add("fa-circle-plus")
+                }
+
+                else {
+                    icons[i].parentElement.nextElementSibling.classList.add("active")
+                    icons[i].classList.add("fa-circle-minus")
+                    icons[i].classList.remove("fa-circle-plus")
+                }
+            }
+        }
+
+    </script>
+
+   
+</body>
+
+</html>
